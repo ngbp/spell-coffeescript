@@ -1,6 +1,6 @@
 {
   "name": "warlock-spell-coffeescript",
-  "version": "0.0.1",
+  "version": "1.0.0-alpha.1",
   "description": "An addon to add CoffeeScript support to the Warlock spell for managing client-side webapps.",
   "homepage": "https://github.com/ngbp/spell-coffeescript",
   "author": {

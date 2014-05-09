@@ -1,0 +1,61 @@
+{
+  "name": "warlock-spell-coffeescript",
+  "version": "0.0.1",
+  "description": "An addon to add CoffeeScript support to the Warlock spell for managing client-side webapps.",
+  "homepage": "https://github.com/ngbp/spell-coffeescript",
+  "author": {
+    "name": "Warlock Team",
+    "url": "http://getwarlock.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ngbp/spell-coffeescript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ngbp/spell-coffeescript"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/ngbp/spell-coffeescript/blob/master/LICENSE"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "peerDependencies": {
+    "warlock-spell-webapp": "~1.0"
+  },
+  "keywords": [
+    "warlockplugin",
+    "warlockspell"
+  ],
+  "warlock": {
+    "globs": {
+      "source": {
+        "coffeescript": [
+          "<%= paths.source_app %>/**/*.coffee",
+          "<%= paths.source_app %>/**/*.coffee.md",
+          "<%= paths.source_app %>/**/*.coffee.markdown",
+          "!<%= paths.source_app %>/**/*.spec.coffee",
+          "!<%= paths.source_app %>/**/*.spec.coffee.md",
+          "!<%= paths.source_app %>/**/*.spec.coffee.markdown"
+        ]
+      }
+    },
+    "tasks": {
+      "coffeescript-lint": {
+        "failOnError": {
+          "fail": true
+        }
+      },
+      "coffeescript-compile": {
+        "bare": true
+      }
+    }
+  },
+  "dependencies": {
+    "gulp-coffee": "^1.4.1",
+    "gulp-coffeelint": "^0.3.2"
+  }
+}

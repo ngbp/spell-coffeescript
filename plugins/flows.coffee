@@ -1,5 +1,6 @@
 coffee = require 'gulp-coffee'
 coffeelint = require 'gulp-coffeelint'
+sourcemaps = require('gulp-sourcemaps');
 
 module.exports = ( warlock ) ->
   warlock.flow 'coffee-to-build',
@@ -16,5 +17,6 @@ module.exports = ( warlock ) ->
       return file if not options.fail or not file.coffeelint or file.coffeelint.success
       warlock.fatal "One or more CoffeeScript files failed linting. I'm going to exit now."
   )
-  .add( 50, 'coffeescript-compile', coffee )
-
+  .add( 50, 'coffeescript-sourcemaps-init', sourcemaps.init )
+  .add( 51, 'coffeescript-compile', coffee )
+  .add( 52, 'coffeescript-sourcemaps-write', sourcemaps.write )
